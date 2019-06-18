@@ -3,48 +3,35 @@ import './App.css';
 import $ from 'jquery';
 import { BrowserRouter as Router, NavLink, Redirect} from 'react-router-dom';
 import Route from 'react-router-dom/Route'; 
-import { Button, Form ,FormGroup ,Label, Input,Nav } from 'reactstrap';
+import { Button, Form ,FormGroup ,Label, Input } from 'reactstrap';
 import { FacebookLoginButton} from 'react-social-login-buttons';
-import Eventlist from './event/event';
+
 import Show from './show/show'
 import Del from './delete/delete'
 import Create from './create/create'
 import Sidebar from './side'
 import Edit from './edit/edit'
 import ToggleButton from 'react-bootstrap/ToggleButton'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+
 
 
 const User = (params) => {
   return (<h1>Welcome {params.username} </h1>)
 }
 
-// const dash= () => {
-//   return(
-//     <Router>
-//       <div>
-//         <ul>
-//           <li><NavLink to="/Peter"  activeStyle={
-//               {color:'green' }
-//             }>Peter</NavLink></li>
-//             <li><NavLink to="/Nitish"  activeStyle={
-//               {color:'green' }
-//             }>Nitish</NavLink></li>
-//         </ul>
-//       </div>
-//       <Route path="/Peter/"  strict render={
-//           () => {
-//             return (<h1>Welcome Peter</h1>);
-//           }
-//         } />
+const validate= () =>{
+  var ele=document.getElementById("mydiv");
+  ele.classList.add("was-validated");
+  
+}
 
-//         <Route path="/Nitish/"  strict render={
-//           () => {
-//             return (<h1>Welcome Nitish</h1>);
-//           }
-//         } />
-//     </Router>
-//   )
-// }
+const ret= () =>{
+  return (false)
+  
+}
+
 
 
 
@@ -107,6 +94,8 @@ validate8= (even) =>{
   
 }
 
+
+
 validate3= () =>{
   var ele3=document.getElementById("mydiv1");
   ele3.classList.add("was-validated");
@@ -146,7 +135,7 @@ handle(even)
          <h1 style={{textAlign: 'center'}}>LOGIN PAGE</h1>
          <div className="form-group">
            <Label>Email</Label><br/>
-           <input className="form-control"  id="email" name="email" type="email" placeholder="Email" onChange={this.validate1} required/>
+           <input className="form-control"  id="email" name="email" type="email"  placeholder="Email" onChange={this.validate1} required/>
            <pre className="error"></pre>
            {/* <div class="invalid-feedback">Example invalid custom select feedback</div> */}
          </div>
@@ -155,7 +144,7 @@ handle(even)
            <input className="form-control" id="password1" name="password1" type="password" placeholder="Password" onChange={this.validate2} required/>
            <pre className="error"></pre>
          </div>
-         <button className="btn-lg btn-dark btn-block" href="/sidebar/" onClick={this.validate} style={{textAlign: 'center'}} >Log In</button>
+         <button type="submit " className="btn-lg btn-dark btn-block" href="/sidebar/" onClick={this.validate}  style={{textAlign: 'center'}}> Log In</button>
          {/* <a className="btn-lg btn-dark btn-block" href="/sidebar/" style={{textAlign: 'center'}} onClick={()=>alert("Hey!")} >Log In</a> */}
          {/* <button className="btn-lg btn-dark btn-block"  href="/logout" >Log In</button> */}
          <div className="text-center pt-3">
@@ -215,58 +204,26 @@ myelement1 = () => {return(<div>
     return (
       <Router>
         <div className="App" className="sticky-top">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-  {/* <a className="navbar-brand" href="#">Navbar</a> */}
-  <Button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </Button>
+        
+        
 
-  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav mr-auto">
-      <li className="nav-item">
-      <NavLink className="list-group-item" to="/" exact strict >Home</NavLink>
-      </li>
-      <li className="nav-item">
-      <NavLink className="list-group-item" to="/login/"  >LOGIN</NavLink>
-      </li>
-      <li className="nav-item">
-      <NavLink className="list-group-item" to="/about/"  >About</NavLink>
-      </li>
-      <li className="nav-item">
-      {/* <a className="nav-link list-group-item list-group-item-action list-group-item-light" href="/features/">Features</a> */}
-        <NavLink className="list-group-item" to="/features/"  >Features</NavLink>
-      </li>
+<Navbar bg="info" variant="light" expand="lg">
+  <Navbar.Brand href="#home"></Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
+      <Nav.Link href="/" exact strict >Home</Nav.Link>
+      <Nav.Link href="/login/">Login</Nav.Link>
+      <Nav.Link href="/about/">About</Nav.Link>
+      <Nav.Link href="/features/">Features</Nav.Link>
       
-      {/* <li className="nav-item">
-        <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li> */}
-    </ul>
-    <form className="form-inline my-2 my-lg-0">
-      <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-        {/* <Route path="/"  render={ navigator } /> */}
-          {/* <ul>
-            
-            <li><NavLink to="/"  activeStyle={
-              {color:'green' }
-            } >Home</NavLink></li>
-            <li><NavLink to="/about/"  activeStyle={
-              {color:'green' }
-            }>About</NavLink></li>
-            <li><NavLink to="/login/"  activeStyle={
-              {color:'green' }
-            }>Log In</NavLink></li>
-            <li><NavLink to="/user/Peter"  activeStyle={
-              {color:'green' }
-            }>Peter</NavLink></li>
-            <li><NavLink to="/user/Nitish"  activeStyle={
-              {color:'green' }
-            }>Nitish</NavLink></li>
-          </ul>
-        <input type="button" value={this.state.loggedIn ? 'Log Out' : 'Log In'} onClick={this.loginHandle.bind(this)} /> */}
+    </Nav>
+    
+  </Navbar.Collapse>
+</Navbar>
+
+
+        {/* <input type="button" value={this.state.loggedIn ? 'Log Out' : 'Log In'} onClick={this.loginHandle.bind(this)} /> */}
 
         <Route path="/" exact strict render={
           () => {
