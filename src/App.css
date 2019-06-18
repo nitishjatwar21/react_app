@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+ 
+  width: 100%;
 }
 
 .App-logo {
@@ -19,9 +21,49 @@
   color: white;
 }
 
+tr, table, td{
+  border: 2px solid black;
+  border-collapse: collapse;
+  margin-top: 1px;
+}
+table#table21 tr:nth-child(even) {
+background-color: #1995AD;
+}
+table#table21 tr:nth-child(odd) {
+background-color: #4CB5F5;
+}
+table#table21 th {
+background-color: #00293C;
+color: white;
+}
+
+table#table11 tr:nth-child(even) {
+  background-color: #1995AD;
+  }
+  table#table11 tr:nth-child(odd) {
+  background-color: #4CB5F5;
+  }
+  table#table11 th {
+  background-color: #00293C;
+  color: white;
+  }
+
+table{
+  width:75%;
+  
+}
+
 .App-link {
   color: #61dafb;
 }
+
+.login-form{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  height: 100%;
+} 
 
 @keyframes App-logo-spin {
   from {
@@ -30,4 +72,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.sidenav {
+  height: 100%;
+  width: 215px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 220px;
+  padding: 0px 0px;
 }
