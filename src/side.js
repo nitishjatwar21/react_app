@@ -6,7 +6,7 @@ class sidebar extends Component {
     render() {
         return(
             <div className="sidenav">
-              <a href="/dashboard/">Dashboard</a>
+              <a href="/react_app/#/dashboard/">Dashboard</a>
               <a href="#">About</a>
               <a href="#">Services</a>
               <a href="#">client</a>

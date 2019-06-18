@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './App.css';
 import $ from 'jquery';
-import { BrowserRouter as Router, NavLink, Redirect} from 'react-router-dom';
+import { HashRouter as Router, NavLink, Redirect} from 'react-router-dom';
 import Route from 'react-router-dom/Route'; 
 import { Button, Form ,FormGroup ,Label, Input } from 'reactstrap';
 import { FacebookLoginButton} from 'react-social-login-buttons';
@@ -131,7 +131,7 @@ handle(even)
     
 
   myelement = () => {return(<div>
-    <Form id="mydiv" className="login-form" action="/sidebar/" >
+    <Form id="mydiv" className="login-form" action="/react_app/#/sidebar/" >
          <h1 style={{textAlign: 'center'}}>LOGIN PAGE</h1>
          <div className="form-group">
            <Label>Email</Label><br/>
@@ -152,7 +152,7 @@ handle(even)
          </div>
          <FacebookLoginButton className="mt-3 mb-3" />
          <div className="text-center">
-         <a href="/signup/">Sign Up</a>
+         <a href="/react_app/#/signup/">Sign Up</a>
          <span className="p-2">|</span> 
          <a href="/forgot-password">Forgot Password</a>
          </div>
@@ -179,7 +179,7 @@ myelement1 = () => {return(<div>
          <input className="form-control" type="password" name="password" id="password" placeholder="Password" onChange={this.validate8} required/>
        </div>
        
-       <button id="sub" className="btn-lg btn-dark btn-block" href="/login/" onClick={this.myfunsignup.bind(this)} style={{textAlign: 'center'}}>Sign UP</button>
+       <button id="sub" className="btn-lg btn-dark btn-block" href="/react_app/#/login/" onClick={this.myfunsignup.bind(this)} style={{textAlign: 'center'}}>Sign UP</button>
        {/* <a className="btn-lg btn-dark btn-block" href="/login/" style={{textAlign: 'center'}}>Sign Up</a> */}
        {/* <button className="btn-lg btn-dark btn-block"  href="/logout" >Log In</button> */}
        {/* <div className="text-center pt-3">
@@ -191,7 +191,7 @@ myelement1 = () => {return(<div>
        <a>Already a Member</a>
        
        <span className="p-2">|</span> 
-       <a href="/login/">Log In</a>
+       <a href="/react_app/#/login/">Log In</a>
        </div>
      </Form>           
   {/* <p>Login Form</p>
@@ -212,10 +212,10 @@ myelement1 = () => {return(<div>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="/" exact strict >Home</Nav.Link>
-      <Nav.Link href="/login/">Login</Nav.Link>
-      <Nav.Link href="/about/">About</Nav.Link>
-      <Nav.Link href="/features/">Features</Nav.Link>
+      <Nav.Link href="/react_app/#/" exact strict >Home</Nav.Link>
+      <Nav.Link href="/react_app/#/login/">Login</Nav.Link>
+      <Nav.Link href="/react_app/#/about/">About</Nav.Link>
+      <Nav.Link href="/react_app/#/features/">Features</Nav.Link>
       
     </Nav>
     
@@ -245,10 +245,10 @@ myelement1 = () => {return(<div>
               <div className="main">
               <Sidebar />
               <div className="row"  >
-              <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><a className="btn-lg btn-success btn-block stretched-link" href="/create/">Create Event</a></div>
-              <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><a className="btn-lg btn-info btn-block" href="/edit/">Edit Event</a></div>
-              <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><a className="btn-lg btn-info btn-block" href="/show/">Show Event</a></div>
-              <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><a className="btn-lg btn-danger btn-block" href="/delete/">Delete Event</a></div>
+              <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><a className="btn-lg btn-success btn-block stretched-link" href="/react_app/#/create/">Create Event</a></div>
+              <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><a className="btn-lg btn-info btn-block" href="/react_app/#/edit/">Edit Event</a></div>
+              <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><a className="btn-lg btn-info btn-block" href="/react_app/#/show/">Show Event</a></div>
+              <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><a className="btn-lg btn-danger btn-block" href="/react_app/#/delete/">Delete Event</a></div>
               </div>
               
               </div>);
